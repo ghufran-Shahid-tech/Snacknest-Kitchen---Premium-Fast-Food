@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snacknest Kitchen - Premium Fast Food</title>
+  
+  <!-- Google Fonts - Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  
+  <!-- ============================================
+       NAVBAR - Sticky Glassmorphism
+       ============================================ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-accent">Snacknest</span> Kitchen
+      </a>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#specials" class="nav-link">Specials</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <div class="cart-icon" id="cartIcon" onclick="toggleCart()">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+      <i class="fas fa-times"></i>
+    </button>
+    <a href="#home" class="mobile-nav-link" onclick="toggleMobileMenu()">Home</a>
+    <a href="#menu" class="mobile-nav-link" onclick="toggleMobileMenu()">Menu</a>
+    <a href="#about" class="mobile-nav-link" onclick="toggleMobileMenu()">About</a>
+    <a href="#specials" class="mobile-nav-link" onclick="toggleMobileMenu()">Specials</a>
+    <a href="#reviews" class="mobile-nav-link" onclick="toggleMobileMenu()">Reviews</a>
+    <a href="#contact" class="mobile-nav-link" onclick="toggleMobileMenu()">Contact</a>
+  </div>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero" id="home">
+    <div class="hero-glow"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+           The taste you love <span class="accent-text">with the quality</span> you expect.
+        </h1>
+        <p class="hero-subtitle">
+          Fresh ingredients. Bold flavors. Fast delivery.
+        </p>
+        <a href="#menu" class="btn btn-primary">
+          <span>Explore Menu</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-container" id="heroImageContainer">
+          <img src="assets/images/hero-burger.jpg" alt="Premium Gourmet Burger" class="hero-image" id="heroImage">
+          <div class="hero-image-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       MENU SECTION
+       ============================================ -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <h2 class="section-title reveal">Our Menu</h2>
+      <div class="menu-categories" id="menuCategories">
+        <!-- Categories will be dynamically generated -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CART DRAWER
+       ============================================ -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 class="cart-title">
+        <i class="fas fa-shopping-bag"></i>
+        Your Cart
+      </h3>
+      <button class="cart-close" onclick="toggleCart()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <i class="fas fa-shopping-basket"></i>
+        <p>Your cart is empty</p>
+        <span>Add items from the menu</span>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <span class="cart-total" id="cartTotal">Rs 0</span>
+      </div>
+      <button class="btn btn-whatsapp" onclick="checkout()">
+        <i class="fab fa-whatsapp"></i>
+        Order on WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SPECIAL ITEMS
+       ============================================ -->
+  <section class="specials-section" id="specials">
+    <div class="container">
+      <h2 class="section-title reveal">Special  ITEMS</h2>
+      <div class="offers-grid">
+        <div class="offer-card reveal">
+          <div class="offer-badge">MOST SELLING</div>
+          <div class="offer-content">
+            <h3 class="offer-title">Momos</h3>
+            <p class="offer-desc">Soft and tender on the outside, filled with a juicy, flavorful stuffing that delivers a rich, savory taste in every bite, making them comforting and irresistible.</p>
+            <button class="btn btn-outline" onclick="scrollToMenu()">Order Now</button>
+          </div>
+          <div class="offer-gradient-border"></div>
+        </div>
+        <div class="offer-card reveal">
+          <div class="offer-badge">MOST SELLING</div>
+          <div class="offer-content">
+            <h3 class="offer-title">chowmein</h3>
+            <p class="offer-desc">Soft and tender on the outside, filled with a juicy, flavorful stuffing that delivers a rich, savory taste in every bite, making them comforting and irresistible.</p>
+            <button class="btn btn-outline" onclick="scrollToMenu()">Order Now</button>
+          </div>
+          <div class="offer-gradient-border"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CUSTOMER REVIEWS SECTION
+       ============================================ -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <h2 class="section-title reveal">What Our Customers Say</h2>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"Best burgers in town! The taste is absolutely unmatched. I've tried many places but Snacknest is on another level."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">AK</div>
+            <div class="reviewer-info">
+              <h4>Ahmed Khan</h4>
+              <span>Regular Customer</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"Fast delivery and amazing quality every single time. The packaging is great and food arrives hot. Highly recommend!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">SA</div>
+            <div class="reviewer-info">
+              <h4>Sarah Ali</h4>
+              <span>Food Enthusiast</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"My go-to place for late night cravings. The loaded fries are incredible and the service is always on point. Love it!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">UF</div>
+            <div class="reviewer-info">
+              <h4>Usman Farooq</h4>
+              <span>Verified Buyer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+   <!-- ============================================
+       WHY CHOOSE US SECTION
+       ============================================ -->
+  <section class="why-choose-us" id="why-choose-us">
+    <div class="container">
+      <h2 class="section-title reveal">Why Choose Us</h2>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="feature-title">Fresh Ingredients</h3>
+          <p class="feature-desc">We source only the freshest, highest quality ingredients for every dish we prepare.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <i class="fas fa-shipping-fast"></i>
+          </div>
+          <h3 class="feature-title">Fast Delivery</h3>
+          <p class="feature-desc">Hot and fresh delivered to your doorstep in 30 minutes or less, guaranteed.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3 class="feature-title">Premium Taste</h3>
+          <p class="feature-desc">Crafted by expert chefs with recipes perfected over years of experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       ABOUT SECTION
+       ============================================ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content reveal">
+          <h2 class="section-title">Our Story</h2>
+          <p class="about-text">
+            Snacknest Kitchen was born from a passion for great food and exceptional service. What started as a small kitchen has grown into a beloved local brand, serving hundreds of happy customers daily.
+          </p>
+          <p class="about-text">
+            We believe that everyone deserves access to delicious, high-quality food made with love and delivered with care. Our chefs use only the freshest ingredients, sourced locally whenever possible.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">5000+</span>
+              <span class="stat-label">Happy Customers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Menu Items</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">45min</span>
+              <span class="stat-label">Avg Delivery</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image reveal">
+          <div class="about-image-wrapper">
+            <img src="assets/images/hero-burger.jpg" alt="About Snacknest">
+            <div class="about-image-accent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACT SECTION
+       ============================================ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="contact-details">
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/+92 316 2341381">+92 316 2341381</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+               <a href="mailto:snacknestkitchen@gmail.com" class="contact-link">snacknestkitchen@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Location</h4>
+              <span>Karachi, Pakistan</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrapper reveal">
+          <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">
+            <span class="logo-accent">Snacknest</span> Kitchen
+          </a>
+          <p class="footer-desc">Premium fast food delivered to your doorstep. Fresh ingredients, bold flavors, fast delivery.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-hours">
+          <h4>Opening Hours</h4>
+          <ul>
+            <li><span>Mon - Sun</span><span>2:00 PM - 2:00 AM</span></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Snacknest Kitchen. All rights reserved.</p>
+        <p>Developed by <a href="https://ghufran-shahid-tech.github.io/Personal-Portfolio-/" target="_blank" class="portfolio-link">Ghufran Shahid</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage">Item added to cart!</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/app.js"></script>
+</body>
+</html>
