@@ -4,14 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snacknest Kitchen - Premium Fast Food</title>
-
   <link rel="icon" type="images/png" sizes="16x16" href="image/favicon-16.png">
   <link rel="icon" type="images/png" sizes="32x32" href="image/favicon-32.png">
   <link rel="icon" type="images/png" sizes="48x48" href="image/favicon-48.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-180.png">
-  <link rel="shortcut icon" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-180.png">
+  <link rel="shortcut icon" href="image/favicon-48.jpg">
+  
   
   <!-- Google Fonts - Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -286,7 +294,7 @@
         </div>
         <div class="about-image reveal">
           <div class="about-image-wrapper">
-            <img src="image/hero-burger.jpg" alt="About Snacknest">
+            <img src="image/hero-burger.png" alt="About Snacknest">
             <div class="about-image-accent"></div>
           </div>
         </div>
@@ -367,24 +375,6 @@
     </div>
   </div>
 </section>
-
-<!-- EmailJS Integration -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS User ID
-
-  function handleContactSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-
-      then(() => {
-        alert("Message sent successfully!");
-        form.reset();
-      }, (error) => {
-        alert("Failed to send message. Please try again.\nError: " + JSON.stringify(error));
-      });
-  }
-</script>
 
 
   <!-- ============================================
