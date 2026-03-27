@@ -29,9 +29,14 @@ const menuData = {
     ["Zinger Thigh", 450],
     ["Zinger Thigh Cheese", 500]
   ],
-  "Fast Food": [
+  "Wraps & Snacks": [
     ["Momos", 300],
-    ["Fries", 150],
+    ["Shawarma",270 ],
+  ],
+  "Fries": [
+    ["Masala Fries", 200],
+    ["Mayo Fries", 200],
+    ["Cheese Fries", 300],
   ],
 
 };
