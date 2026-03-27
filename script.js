@@ -16,30 +16,24 @@
 // ============================================
 const menuData = {
   "Rice & Pasta": [
-    ["Fried Rice Veg", 200],
-    ["Fried Rice Chicken", 250],
-    ["Chilli Chicken", 250],
-    ["Chow Mein", 250],
-    ["Alfredo Pasta", 350],
-    ["Lasagne", 500]
+    ["Fried Rice Veg", 300],
+    ["Fried Rice Chicken", 350],
+    ["Chilli Chicken", 350],
+    ["Chow Mein", 350],
+    ["Alfredo Pasta", 450],
+    ["Lasagne", 600]
   ],
   "Burgers": [
-    ["Bun Kabab", 100],
-    ["Anday Wala Burger", 150],
-    ["Zinger Breast", 300],
-    ["Zinger Breast Cheese", 350],
-    ["Zinger Thigh", 350],
-    ["Zinger Thigh Cheese", 400]
+    ["Zinger Breast", 400],
+    ["Zinger Breast Cheese", 450],
+    ["Zinger Thigh", 450],
+    ["Zinger Thigh Cheese", 500]
   ],
   "Fast Food": [
-    ["Momos", 200],
+    ["Momos", 300],
     ["Fries", 150],
-    ["Loaded Fries", 300],
   ],
-  "Drinks": [
-    ["Coke", 100],
-    ["Sprite", 100],
-  ]
+
 };
 
 // ============================================
