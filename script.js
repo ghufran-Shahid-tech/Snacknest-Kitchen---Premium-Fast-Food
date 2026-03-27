@@ -40,7 +40,41 @@ const menuData = {
   ],
 
 };
+document.addEventListener("DOMContentLoaded", function () {
 
+  const texts = [
+    "Fresh ingredients crafted with passion for every bite 🍃",
+    "Bold and rich flavors that satisfy your cravings 🌶️",
+    "Fast and reliable delivery right to your doorstep 🚀"
+  ];
+
+  let count = 0;
+  let index = 0;
+
+  function typeLoop() {
+    const element = document.getElementById("typing-subtitle");
+
+    if (!element) return; // safety check
+
+    let current = texts[count];
+    let letter = current.slice(0, ++index);
+
+    element.textContent = letter;
+
+    if (letter.length === current.length) {
+      setTimeout(() => {
+        index = 0;
+        count = (count + 1) % texts.length;
+        typeLoop();
+      }, 1800);
+    } else {
+      setTimeout(typeLoop, 35);
+    }
+  }
+
+  typeLoop();
+
+});
 // ============================================
 // CART STATE
 // ============================================
@@ -432,3 +466,6 @@ contactForm.addEventListener('submit', function(e){
       console.error(error);
     });
 });
+
+element.classList.add("active");
+
