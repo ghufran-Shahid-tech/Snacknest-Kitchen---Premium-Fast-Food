@@ -35,12 +35,10 @@ const menuData = {
     ["Momos", 200],
     ["Fries", 150],
     ["Loaded Fries", 300],
-    ["Chicken Nuggets", 350]
   ],
   "Drinks": [
     ["Coke", 100],
     ["Sprite", 100],
-    ["Mint Margarita", 180]
   ]
 };
 
@@ -119,6 +117,8 @@ function createMenuItem(name, price, index) {
   
   return item;
 }
+
+
 
 // ============================================
 // CART MANAGEMENT
