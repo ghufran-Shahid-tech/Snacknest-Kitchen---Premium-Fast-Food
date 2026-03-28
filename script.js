@@ -43,9 +43,9 @@ const menuData = {
 document.addEventListener("DOMContentLoaded", function () {
 
   const texts = [
-    "Fresh ingredients crafted with passion for every bite 🍃",
-    "Bold and rich flavors that satisfy your cravings 🌶️",
-    "Fast and reliable delivery right to your doorstep 🚀"
+    "Fresh ingredients crafted with passion for every bite ",
+    "Bold and rich flavors that satisfy your cravings ",
+    "Fast and reliable delivery right to your doorstep "
   ];
 
   let count = 0;
